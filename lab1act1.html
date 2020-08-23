@@ -2,67 +2,79 @@
 <html lang="en-US">
 
 <head>
+	<meta charset="UTF-8">
 	<title>
-		pkedilay-Lab1
+		pkedilay-Lab1Act1
 	</title>
 </head>
 <!-- http://lead1.poly.asu.edu/cgi-bin/cgiquery.pl -->
+
 <body>
-	<form action="http://lead1.poly.asu.edu/cgi-bin/cgiquery.pl" method="GET">
-		<label for="pkedilay_color">Color:</label>
-		<input type="color" id="pkedilay_color" name="pkedilay_color" />
-		<br />
+	<div class="container">
+		<div>
+			<form action="http://lead1.poly.asu.edu/cgi-bin/cgiquery.pl" method="GET">
+				<label for="pkedilay_color">Color:</label>
+				<input type="color" id="pkedilay_color" name="pkedilay_color" required />
+				<br />
 
-		<label for="pkedilay_date">Date:</label>
-		<input type="date" id="pkedilay_date" name="pkedilay_date" />
-		<br />
+				<label for="pkedilay_date">Date:</label>
+				<input type="date" id="pkedilay_date" name="pkedilay_date" min="2010-01-01" max="2017-09-01" required />
+				<br />
 
-		<label for="pkedilay_datetime_local">Datetime-Local:</label>
-		<input type="datetime-local" id="pkedilay_datetime_local" name="pkedilay_datetime_local" />
-		<br />
+				<label for="pkedilay_datetime_local">Datetime-Local:</label>
+				<input type="datetime-local" id="pkedilay_datetime_local" name="pkedilay_datetime_local" required />
+				<br />
 
-		<label for="pkedilay_email">Email:</label>
-		<input type="email" id="pkedilay_email" placeholder="name@example.com" name="pkedilay_email">
-		<br />
+				<label for="pkedilay_email">Email:</label>
+				<input type="email" id="pkedilay_email" placeholder="name@example.com" name="pkedilay_email" required />
+				<br />
 
-		<label for="pkedilay_file">File:</label>
-		<input type="file" id="pkedilay_file" name="pkedilay_file">
-		<br />
+				<label for="pkedilay_file">File:</label>
+				<input type="file" id="pkedilay_file" name="pkedilay_file" required />
+				<br />
 
-		<label for="pkedilay_month">Month:</label>
-		<input type="month" id="pkedilay_month" name="pkedilay_month">
-		<br />
+				<label for="pkedilay_month">Month:</label>
+				<input type="month" id="pkedilay_month" name="pkedilay_month" required />
+				<br />
 
-		<label for="pkedilay_number">Number:</label>
-		<input type="number" id="pkedilay_number" name="pkedilay_number" />
-		<br />
+				<label for="pkedilay_number">Number:</label>
+				<input type="number" id="pkedilay_number" name="pkedilay_number" value="100" required />
+				<br />
 
-		<label for="pkedilay_range">Range:</label>
-		<input type="range" id="pkedilay_range" name="pkedilay_range" min="0" max="50">
-		<br />
+				<label for="pkedilay_range">Range:</label>
+				<input type="range" id="pkedilay_range" name="pkedilay_range" min="-10" max="10" required />
+				<br />
 
-		<label for="pkedilay_search">Search:</label>
-		<input type="search" id="pkedilay_search" name="pkedilay_search" />
-		<br />
+				<label for="pkedilay_search">Search:</label>
+				<input type="search" id="pkedilay_search" name="pkedilay_search" required />
+				<br />
 
-		<label for="pkedilay_tel">Telephone number:</label>
-		<input type="tel" id="pkedilay_tel" name="pkedilay_tel" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-		<br />
+				<label for="pkedilay_tel">Telephone number:</label>
+				<input type="tel" id="pkedilay_tel" name="pkedilay_tel" placeholder="xxx-xxx-xxxx"
+					pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+				<br />
 
-		<label for="pkedilay_time">Time:</label>
-		<input type="time" id="pkedilay_time" name="pkedilay_time" />
-		<br />
+				<label for="pkedilay_time">Time:</label>
+				<input type="time" id="pkedilay_time" name="pkedilay_time" required />
+				<br />
 
-		<label for="pkedilay_url">URL:</label>
-		<input type="url" id="pkedilay_url" placeholder="https://abc.xyz" name="pkedilay_url" />
-		<br />
+				<label for="pkedilay_url">URL:</label>
+				<input type="url" id="pkedilay_url" placeholder="https://abc.xyz" name="pkedilay_url" required />
+				<br />
 
-		<label for="pkedilay_week">Select a week:</label>
-		<input type="week" id="pkedilay_week" name="pkedilay_week" />
-		<br />
+				<label for="pkedilay_week">Select a week:</label>
+				<input type="week" id="pkedilay_week" name="pkedilay_week" required />
+				<br />
 
-		<input type="submit" value="Submit" />
-	</form>
+				<label for="pkedilay_RTN">Routing number:</label>
+				<input type="text" id="pkedilay_RTN" name="pkedilay_RTN" pattern="[0-9]{9}\s[0-9]{12}\s[0-9]{4}"
+					style="width: 15rem;" required />
+				<br />
+
+				<input type="submit" value="Submit" name="pkedilay_submit" />
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>
