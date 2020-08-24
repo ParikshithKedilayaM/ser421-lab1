@@ -19,5 +19,7 @@ function operate(operation, num) {
         console.error("Unsupported operation: " + operation)
     }
 }
+
+// Test Cases
 calc('{"op": "subtract", "expr" : {"op" : "add", "number" : 15}}')
 calc('{"op": "add", "expr" : {"op" : "add", "expr" : {"op" : "subtract", "number" : 3}}}')
