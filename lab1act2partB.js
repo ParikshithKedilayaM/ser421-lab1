@@ -21,5 +21,5 @@ function operate(operation, num) {
 }
 
 // Test Cases
-calc('{"op": "subtract", "expr" : {"op" : "add", "number" : 15}}')
-calc('{"op": "add", "expr" : {"op" : "add", "expr" : {"op" : "subtract", "number" : 3}}}')
+console.log(calc('{"op": "subtract", "expr" : {"op" : "add", "number" : 15}}'))
+console.log(calc('{"op": "add", "expr" : {"op" : "add", "expr" : {"op" : "subtract", "number" : 3}}}'))

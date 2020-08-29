@@ -13,6 +13,6 @@ function calc(string) {
 }
 
 // Test Cases
-calc('{"op" : "add", "number" : 5}')
-calc('{"op" : "subtract", "number" : 2}')
-calc('{"op" : "add", "number" : 19}')
+console.log(calc('{"op" : "add", "number" : 5}'))
+console.log(calc('{"op" : "subtract", "number" : 2}'))
+console.log(calc('{"op" : "add", "number" : 19}'))
