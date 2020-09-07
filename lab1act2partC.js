@@ -27,31 +27,36 @@ function PreCalc(initialValue) {
         // return "[" + this.items.toString() + "]"
     }
     this.calc = (string) => {
-        if (string.includes("expr")) {
-            var jsonInput = JSON.parse(string)
-            var res = this.calc(JSON.stringify(jsonInput.expr))
-            return this.operate(jsonInput.op, res)
-        } else {
-            var jsonInput = JSON.parse(string)
-            return this.operate(jsonInput.op, jsonInput.number)
+        try {
+            if (string.includes("expr")) {
+                var jsonInput = JSON.parse(string)
+                var res = this.calc(JSON.stringify(jsonInput.expr))
+                return this.operate(jsonInput.op, res)
+            } else {
+                var jsonInput = JSON.parse(string)
+                return this.operate(jsonInput.op, jsonInput.number)
+            }
+        } catch (e) {
+            console.error("Exception occured: " + e)
         }
     }
     this.operate = (operation, num) => {
-        switch(operation) {
-            case "add" : 
+        switch (operation) {
+            case "add":
                 return this.peek() + num
-            case "subtract" : 
+            case "subtract":
                 return this.peek() - num
-            case "push" : 
+            case "push":
                 this.push(num)
                 return num
-            case "pop" :
+            case "pop":
                 return this.pop()
-            case "print" :
+            case "print":
                 console.log(this.print())
-                return this.print()
-            default :
-                console.error("Unsupported operation: " + operation)
+                break
+            // return this.print()
+            default:
+                throw "Unsupported operation: " + operation
         }
     }
 }
@@ -59,13 +64,13 @@ function PreCalc(initialValue) {
 var preCalc = new PreCalc(0)
 
 // Test Cases
-console.log(preCalc.calc('{"op" : "add", "number" : 5}'))
-console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "subtract", "number" : 2}}'))
-console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "add", "number" : 19}}'))
-console.log(preCalc.calc('{"op" : "pop"}'))
-preCalc.calc('{"op" : "print"}')
-console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "add", "expr": {"op" : "pop"}}}'))
-preCalc.calc('{"op" : "print"}')
-console.log(preCalc.calc('{"op" : "pop"}'))
-console.log(preCalc.calc('{"op" : "pop"}'))
-console.log(preCalc.calc('{"op" : "pop"}'))
+// console.log(preCalc.calc('{"op" : "add", "number" : 5}'))
+// console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "subtract", "number" : 2}}'))
+// console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "add", "number" : 19}}'))
+// console.log(preCalc.calc('{"op" : "pop"}'))
+// preCalc.calc('{"op" : "print"}')
+// console.log(preCalc.calc('{"op" : "push", "expr" : {"op" : "add", "expr": {"op" : "pop"}}}'))
+// preCalc.calc('{"op" : "print"}')
+// console.log(preCalc.calc('{"op" : "pop"}'))
+// console.log(preCalc.calc('{"op" : "pop"}'))
+// console.log(preCalc.calc('{"op" : "pop"}'))
