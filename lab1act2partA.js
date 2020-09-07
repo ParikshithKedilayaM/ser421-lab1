@@ -1,4 +1,8 @@
 var number = 0
+/**
+ * Calc function performs basic add and subtract operations
+ * @param {string} string 
+ */
 function calc(string) {
     try {
         var jsonInput = JSON.parse(string)

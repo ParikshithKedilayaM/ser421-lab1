@@ -1,4 +1,9 @@
 var number = 0
+/**
+ * Calc function performs add and subtract operations
+ * along with nested expressions
+ * @param {string} string 
+ */
 function calc(string) {
     try {
         if (string.includes("expr")) {
@@ -14,6 +19,11 @@ function calc(string) {
         console.error("Exception occured: " + e)
     }
 }
+/**
+ * Helper function to perform operations
+ * @param {string} operation 
+ * @param {number} num 
+ */
 function operate(operation, num) {
     if (operation === "add") {
         number += num

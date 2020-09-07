@@ -1,31 +1,40 @@
-function PreCalc(initialValue) {
-    this.items = [initialValue];
+/**
+ * PreCalc class contains a stack with
+ * push, pop, peek, isEmpty, print, calc operations in it
+ * @param {number} initialValue 
+ */
+function PreCalc(initialValue = 0) {
+    this.calStack = [initialValue];
 
     this.push = (element) => {
-        this.items.push(element)
+        this.calStack.push(element)
     }
     this.pop = () => {
         if (!this.isEmpty()) {
-            return this.items.pop()
+            return this.calStack.pop()
         } else {
             return "(what? You have an empty stack now)"
         }
     }
     this.peek = () => {
-        return this.items[this.items.length - 1]
+        return this.calStack[this.calStack.length - 1]
     }
     this.isEmpty = () => {
-        return this.items.length === 0
+        return this.calStack.length === 0
     }
     this.print = () => {
         var str = ""
-        for (var i = this.items.length - 1; i >= 0; i--) {
-            str += this.items[i] + " ";
+        for (var i = this.calStack.length - 1; i >= 0; i--) {
+            str += this.calStack[i] + " ";
         }
         str = "[" + str.trim() + "]"
         return str
-        // return "[" + this.items.toString() + "]"
+        // return "[" + this.calStack.toString() + "]"
     }
+    /**
+     * Calc function performs various operations handling JSON values.
+     * @param {string} string 
+     */
     this.calc = (string) => {
         try {
             if (string.includes("expr")) {
@@ -40,6 +49,11 @@ function PreCalc(initialValue) {
             console.error("Exception occured: " + e)
         }
     }
+    /**
+     * Helper function which performs operations
+     * @param {string} operation 
+     * @param {number} num 
+     */
     this.operate = (operation, num) => {
         switch (operation) {
             case "add":
